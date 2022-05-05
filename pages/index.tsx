@@ -10,8 +10,9 @@ const Home: NextPage = () => {
         <title>Raccoon Arcade</title>
       </Head>
       <main className='bg-background h-screen flex flex-col items-center justify-center'>
-        <h1 className='text-4xl text-text'>Welcome to the Raccoon Arcade!</h1>
-        <Image src='/neutral-raccoon.svg' height={300} width={300}></Image>
+        <h1 className='text-5xl font-bold text-text mb-5'>🕹️ Welcome to Raccoon Arcade! 🕹️</h1>
+        <p className='text-xl font-medium mb-10'>Wanna play rock paper scissors with me?</p>
+        <Image src='/neutral-raccoon.svg' height={400} width={400}></Image>
       </main>
     </div>
   );
