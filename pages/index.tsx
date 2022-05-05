@@ -5,12 +5,13 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Raccoon Arcade</title>
       </Head>
-      <main>
-        <h1 className='text-3xl'>Welcome to the Raccoon Arcade!</h1>
+      <main className='bg-background h-screen flex flex-col items-center justify-center'>
+        <h1 className='text-4xl text-text'>Welcome to the Raccoon Arcade!</h1>
+        <Image src='/neutral-raccoon.svg' height={300} width={300}></Image>
       </main>
     </div>
   );
