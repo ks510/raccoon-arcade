@@ -10,20 +10,27 @@ const Home: NextPage = () => {
   const [userChoice, setUserChoice] = useState<Choices | null>(null);
   const [raccoonChoice, setRaccoonChoice] = useState<Choices | null>(null);
 
+
   useEffect(() => {
-    // randomly pick between 3 choices
-    switch (Math.floor(Math.random() * 3 + 1)) {
-      case 1:
-        setRaccoonChoice(Choices.Rock);
-        break;
-      case 2:
-        setRaccoonChoice(Choices.Paper);
-        break;
-      case 3:
-        setRaccoonChoice(Choices.Scissors);
-        break;
+    if (userChoice) {
+      switch (getRandomNumber(1, 3)) {
+        case 1:
+          setRaccoonChoice(Choices.Rock);
+          break;
+        case 2:
+          setRaccoonChoice(Choices.Paper);
+          break;
+        case 3:
+          setRaccoonChoice(Choices.Scissors);
+          break;
+      }
     }
   }, [userChoice]);
+
+  // randomly pick between 3 choices
+  const getRandomNumber = (min: number, max: number): number => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
 
   return (
     <div>
@@ -41,7 +48,7 @@ const Home: NextPage = () => {
         </div>
         <p className='text-2xl text-text font-medium mt-6'>My Choice: {userChoice}</p>
         <p className='text-2xl text-text font-medium mt-6'>Raccoon's Choice: {raccoonChoice}</p>
-        <p>Winner: <Winner userChoice={userChoice} raccoonChoice={raccoonChoice} /></p>
+        {userChoice && <p>Winner: <Winner userChoice={userChoice} raccoonChoice={raccoonChoice} /></p>}
       </main>
     </div>
   );
