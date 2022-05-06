@@ -25,8 +25,6 @@ const Winner = (props: Props) => {
     if (userChoice === Choices.Scissors) {
       return raccoonChoice === Choices.Rock ? 'Raccoon' : 'You';
     }
-
-    return 'Error!';
   };
 
   return (

@@ -28,9 +28,9 @@ const RpsButton: FC<Props> = (props) => {
   };
 
   return (
-    <button className='text-9xl' onClick={rpsClicked}>
-      <div>
-        {rpsEmoji()}
+    <button className='text-9xl active:text-8xl transition-all w-40' onClick={rpsClicked}>
+      <div className=''>
+        <div className='h-32 flex justify-center items-center'>{rpsEmoji()}</div>
         <h2 className='text-3xl text-text font-semibold mt-3'>{choice}</h2>
       </div>
     </button>
