@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Choices } from '../pages';
+import { Choices } from '../enums/Choices';
 
 interface Props {
   choice: Choices;

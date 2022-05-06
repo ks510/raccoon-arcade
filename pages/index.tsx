@@ -3,10 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import RpsButton from '../components/RpsButton';
 import { useEffect, useState } from 'react';
-
-export enum Choices {
-  Rock = 'Rock', Paper = 'Paper', Scissors = 'Scissors'
-}
+import { Choices } from '../enums/Choices';
+import Winner from '../components/Winner';
 
 const Home: NextPage = () => {
   const [userChoice, setUserChoice] = useState<Choices | null>(null);
@@ -27,26 +25,6 @@ const Home: NextPage = () => {
     }
   }, [userChoice]);
 
-  const getWinner = (userChoice: Choices, raccoonChoice: Choices) => {
-    if (userChoice === raccoonChoice) {
-      return 'Draw!';
-    }
-
-    if (userChoice === Choices.Rock) {
-      return raccoonChoice === Choices.Paper ? 'Raccoon' : 'You';
-    }
-
-    if (userChoice === Choices.Paper) {
-      return raccoonChoice === Choices.Scissors ? 'Raccoon' : 'You';
-    }
-
-    if (userChoice === Choices.Scissors) {
-      return raccoonChoice === Choices.Rock ? 'Raccoon' : 'You';
-    }
-
-    return 'Error';
-  };
-  
   return (
     <div>
       <Head>
@@ -63,7 +41,7 @@ const Home: NextPage = () => {
         </div>
         <p className='text-2xl text-text font-medium mt-6'>My Choice: {userChoice}</p>
         <p className='text-2xl text-text font-medium mt-6'>Raccoon's Choice: {raccoonChoice}</p>
-        <p>Winner: {getWinner(userChoice as Choices, raccoonChoice as Choices)}</p>
+        <p>Winner: <Winner userChoice={userChoice} raccoonChoice={raccoonChoice} /></p>
       </main>
     </div>
   );
