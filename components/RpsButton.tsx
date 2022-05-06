@@ -3,15 +3,14 @@ import { Choices } from '../enums/Choices';
 
 interface Props {
   choice: Choices;
-  setUserChoice: (choice: Choices) => void;
+  updateChoices: (userChoice: Choices) => void;
 }
 
 const RpsButton: FC<Props> = (props) => {
-  const { choice, setUserChoice } = props;
+  const { choice, updateChoices } = props;
 
   const rpsClicked = () => {
-    console.log(choice);
-    setUserChoice(choice);
+    updateChoices(choice);
   };
 
   const rpsEmoji = () => {
