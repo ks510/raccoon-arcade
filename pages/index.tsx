@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           <RpsButton choice={Choices.Scissors} updateChoices={updateChoices} />
         </div>
         <p className='text-2xl text-text font-medium mt-6'>My Choice: {userChoice}</p>
-        <p className='text-2xl text-text font-medium mt-2'>Raccoon's Choice: {raccoonChoice}</p>
+        <p className='text-2xl text-text font-medium mt-2'>Raccoon&apos;s Choice: {raccoonChoice}</p>
         {userChoice &&
           <p>Winner: <Winner userChoice={userChoice} raccoonChoice={raccoonChoice} setResult={setResult} /></p>}
       </main>
