@@ -22,6 +22,7 @@ There's still a few more things Raccoon wants to improve on first to make the UX
 | 🔧  | Add confetti when you win 🎉                    |
 | 🔧  | Add a win/win streak counter                    |
 | 🔧  | Optimise for mobile and tablet screens          |
+| 🔧  | Update favicon for raccoon website          |
 
 ## 🎮 Future Games
 
